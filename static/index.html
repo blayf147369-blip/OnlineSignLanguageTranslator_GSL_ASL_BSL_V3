@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Sign Language Translator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <h1>AI Sign Language Translator</h1>
+      </header>
+
+      <main class="layout">
+        <section class="panel left-panel">
+          <div class="controls">
+            <label for="language">Language</label>
+            <select id="language">
+              <option value="GSL">Ghanaian Sign Language (GSL)</option>
+              <option value="ASL">American Sign Language (ASL)</option>
+              <option value="BSL">British Sign Language (BSL)</option>
+            </select>
+
+            <label for="inputText">Text</label>
+            <textarea id="inputText" rows="5" placeholder="Type or speak a sentence...">Hello friend</textarea>
+
+            <div class="action-row">
+              <button id="translateBtn" class="primary">Translate</button>
+              <button id="micBtn">Microphone</button>
+            </div>
+
+            <div id="speechStatus" class="status">Microphone status: idle</div>
+          </div>
+
+          <div class="results">
+            <h3>Translation Result</h3>
+            <div id="resultText">Waiting for input...</div>
+            <div id="resultSequence" class="sequence"></div>
+            <div id="warningBox" class="warning"></div>
+          </div>
+
+          <div class="playback">
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="replayBtn">Replay</button>
+            <button id="stopBtn">Stop</button>
+          </div>
+        </section>
+
+        <section class="panel right-panel">
+          <div class="avatar-wrap">
+            <div id="avatar" class="avatar">
+              <div class="head"></div>
+              <div class="torso"></div>
+              <div class="arm left">
+                <div class="forearm"></div>
+                <div class="hand"></div>
+              </div>
+              <div class="arm right">
+                <div class="forearm"></div>
+                <div class="hand"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
